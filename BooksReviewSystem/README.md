@@ -23,7 +23,7 @@ The Book Review System is a RESTful API built using FastAPI for managing book re
    git clone https://github.com/syedkaiser123/EastVantage.git
 2. Navigate to the project repository:
     ```bash
-    cd book-review-system
+    cd EastVantage/BooksReviewSystem/
 3. Install the dependencies:
     ```bash
     pip install -r requirements.txt
