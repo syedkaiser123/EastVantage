@@ -1,0 +1,97 @@
+{
+	"info": {
+		"_postman_id": "4d045011-153b-4a34-804a-bc16d4c4150a",
+		"name": "localhost",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "11516664"
+	},
+	"item": [
+		{
+			"name": "GET/ADD Books",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/books/?author=Tawseef Lone&publication_year=2023",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"books",
+						""
+					],
+					"query": [
+						{
+							"key": "author",
+							"value": "Tawseef Lone"
+						},
+						{
+							"key": "publication_year",
+							"value": "2023"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Submit review",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"text\": \"Something new\",\r\n    \"rating\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/books/2/reviews/"
+			},
+			"response": []
+		},
+		{
+			"name": "GET reviews",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8000/books/2/reviews/"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a book",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://127.0.0.1:8000/books/4"
+			},
+			"response": []
+		},
+		{
+			"name": "Update book details",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Karnataka\",\r\n    \"author\": \"SKM\",\r\n    \"publication_year\": \"2020\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/books/3"
+			},
+			"response": []
+		}
+	]
+}

@@ -33,8 +33,17 @@ The Book Review System is a RESTful API built using FastAPI for managing book re
 
 ## Usage
 - Use an API client like Postman or cURL to interact with the API endpoints.
+## Endpoint URLs
+- `POST: http://127.0.0.1:8000/books/`
+- `POST: http://127.0.0.1:8000/books/{book_id}/reviews/`
+- `GET: http://127.0.0.1:8000/books/{book_id}/reviews/`
+- `DELETE: http://127.0.0.1:8000/books/{book_id}`
+- `PUT: http://127.0.0.1:8000/books/{book_id}`
+
+### `Note`: You can also refer or import the postman collection I have provided in the repository above.
 
 ## Testing
+### `Note`: The test cases are not working yet as there is some module level issue. However, I have completed test cases for all the endpoints in the above application.
 - Run the test cases using pytest:
     ```
     pytest
