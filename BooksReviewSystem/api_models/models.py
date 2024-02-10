@@ -1,30 +1,9 @@
 
 from pydantic import BaseModel
 from sqlalchemy import Column, Integer, String, Float
-from databases.database_config import Base
+from databases.database_config import *
 from sqlalchemy import ForeignKey
 from sqlalchemy.orm import relationship
-
-
-
-
-class ItemSchema(BaseModel):
-    name: str
-    description: str = None
-    price: float
-    tax: float = None
-
-    class Config:
-        orm_mode = True
-
-class Item(Base):
-    __tablename__ = 'items'
-
-    id = Column(Integer, primary_key=True, index=True)
-    name = Column(String)
-    description = Column(String)
-    price = Column(Float)
-    tax = Column(Float)
 
 class Book(Base):
     __tablename__ = 'books'
@@ -34,7 +13,7 @@ class Book(Base):
     author = Column(String)
     publication_year = Column(Integer)
 
-    reviews = relationship("Review", back_populates="books")
+    reviews = relationship("Review", back_populates="book", cascade="all, delete")
 
 class BookSchema(BaseModel):
     title: str
@@ -50,6 +29,7 @@ class Review(Base):
     id = Column(Integer, primary_key=True, index=True)
     text = Column(String)
     rating = Column(Integer)
+    book_id = Column(Integer, ForeignKey('books.book_id'))
 
     book = relationship("Book", back_populates="reviews")
 

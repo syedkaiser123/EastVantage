@@ -2,10 +2,9 @@ from fastapi.testclient import TestClient
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-
-from databases.database_config import Base, engine
-from models.models import Book, Review
-from main import app
+from .databases.database_config import Base, engine
+# from .db_api_models.models import Book, Review
+from .main import app
 
 # Create an SQLAlchemy session to interact with the database
 TestingSessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
